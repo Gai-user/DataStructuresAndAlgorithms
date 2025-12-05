@@ -1,0 +1,55 @@
+# =========================
+# CMake / 构建系统相关
+# =========================
+
+# CMake 配置和生成的文件（out-of-source build 目录通常不提交，但有时会误建在源码内）
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+cmake_install.cmake
+install_manifest.txt
+CTestTestfile.cmake
+_Deps/
+
+# 构建目录（如果你不小心在源码根目录下运行了 cmake .）
+/build/
+/bin/
+/lib/
+/output/
+
+# 编译生成的可执行文件和目标文件（按需保留，通常不提交）
+*.exe
+*.out
+*.dll
+*.so
+*.dylib
+*.a
+*.lib
+*.o
+*.obj
+Makefile
+
+# =========================
+# Visual Studio Code
+# =========================
+
+.vscode/
+# 如果你希望共享部分设置（如代码格式），可以单独提交 .vscode/settings.json
+# 但通常建议忽略整个 .vscode/，或选择性取消注释下面一行：
+# !.vscode/settings.json
+
+# =========================
+# 其他常见忽略项
+# =========================
+
+# IDE / 编辑器
+.idea/
+*.swp
+*.swo
+.DS_Store
+tags
+cscope.*
+
+# 日志、临时文件
+*.log
+*.tmp

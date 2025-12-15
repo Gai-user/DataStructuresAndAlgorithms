@@ -3,25 +3,19 @@
 
 #include <iostream>
 #include <memory>
+#include "../../utils/Node.h"
 
-template <typename T>
-struct TreeNode
-{
-    T value;
-    std::unique_ptr<TreeNode<T>> left;
-    std::unique_ptr<TreeNode<T>> right;
-
-    explicit TreeNode(const T& val) : value(val), left(nullptr), right(nullptr) {}
-};
 
 template <typename T>
 class BinaryTree
 {
 private:
-    std::unique_ptr<TreeNode<T>> node;
     void preOrderRecursive(const TreeNode<T>* n) const;
     void inOrderRecursive(const TreeNode<T>* n) const;
     void postOrderRecursive(const TreeNode<T>* n) const;
+
+protected:
+    std::unique_ptr<TreeNode<T>> node; // 根节点
 
 public:
     BinaryTree() = default;

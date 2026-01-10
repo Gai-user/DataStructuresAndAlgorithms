@@ -4,10 +4,18 @@ cmake_minimum_required(VERSION 3.30)
 # 项目名称和语言
 project(CppDataStructure LANGUAGES  CXX)
 
+option(BUILD_TESTING "enable GoogleTest" OFF)
+
 # 设置 C++ 标准
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_subdirectory(src/sort)
-add_subdirectory(src/BinarySearch)
-add_subdirectory(src/BinaryTree)
+# 设置静态库的输出目录
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+
+enable_testing()
+
+add_subdirectory(src)
+if (BUILD_TESTING) 
+    add_subdirectory(test)
+endif()

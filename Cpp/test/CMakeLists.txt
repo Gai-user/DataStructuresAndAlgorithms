@@ -6,10 +6,12 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(googletest)
 
+include(GoogleTest)
+
 set(TEST_SOURCES GraphTest.cpp)
 add_executable(dataStructure ${TEST_SOURCES})
 
 target_link_libraries(dataStructure
                       DataAndAlgorithm
                       GTest::gtest_main)
-add_test(NAME ALLtests COMMAND dataStructure)
+gtest_discover_tests(dataStructure)

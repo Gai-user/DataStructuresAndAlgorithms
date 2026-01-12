@@ -1,0 +1,3 @@
+GraphTest.BreadthFirstSearch 1 0.0133464
+GraphTest.DepthFirstSearchTest 1 0.0094786
+---

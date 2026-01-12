@@ -27,6 +27,7 @@ _Deps/
 *.lib
 *.o
 *.obj
+*.cmake
 Makefile
 
 # =========================

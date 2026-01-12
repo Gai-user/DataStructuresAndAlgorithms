@@ -25,3 +25,10 @@ TEST_F(GraphTest, BreadthFirstSearch)
     ASSERT_FALSE(path.empty());
     EXPECT_EQ(path, std::vector<int>({0, 1, 4}));
 }
+
+TEST_F(GraphTest, DepthFirstSearchTest)
+{
+    const auto& path = g.DepthFirstSearch(0, 4);
+    ASSERT_FALSE(path.empty());
+    EXPECT_EQ(path, std::vector<int>({0, 3, 4}));
+}

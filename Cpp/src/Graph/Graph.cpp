@@ -52,3 +52,30 @@ std::vector<int> Graph::BreadthFirstSearch(int s, int t)
     return {};
     
 }
+
+void Graph::DFSHelper(int s, int t, std::vector<bool>& visited, std::vector<int>& prev)
+{
+    if (s == t) {
+        return;
+    }
+    visited[s] = true;
+    for (const auto& cur : adj[s]) {
+        if (visited[cur]) {
+            continue;
+        }
+        prev[cur] = s;
+        DFSHelper(cur, t, visited, prev);
+    }
+}
+
+std::vector<int> Graph::DepthFirstSearch(int s, int t)
+{
+    if (s == t) {
+        return {};
+    }
+
+    std::vector<bool> visited(v, false);
+    std::vector<int> prev(v, -1);
+    DFSHelper(s, t, visited, prev);
+    return GetOrder(prev, t);
+}

@@ -1,3 +1,5 @@
-GraphTest.BreadthFirstSearch 1 0.0133464
-GraphTest.DepthFirstSearchTest 1 0.0094786
+GraphTest.BreadthFirstSearch 11 0.000750473
+GraphTest.DepthFirstSearchTest 11 0.000723727
+GraphTest.ExistWordTest 0 0
+LeetCodeTest.ExistWordTest 3 0.0027274
 ---

@@ -32,3 +32,9 @@ TEST_F(GraphTest, DepthFirstSearchTest)
     ASSERT_FALSE(path.empty());
     EXPECT_EQ(path, std::vector<int>({0, 3, 4}));
 }
+
+TEST(LeetCodeTest, ExistWordTest) {
+    std::vector<std::vector<char>> board1{{'A','B','C','E'}, {'S','F','C','S'}, {'A','D','E','E'}};
+    std::string word1 = "ABCCED";
+    EXPECT_TRUE(Graph::ExistWord(board1, word1));
+}

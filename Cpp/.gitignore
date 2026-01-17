@@ -56,3 +56,9 @@ cscope.*
 *.tmp
 
 *.cmake
+# 这个文件是用来调试代码用的
+testing
+# 构建用的文件夹
+cmake-build-*/
+
+CTestCostData.txt

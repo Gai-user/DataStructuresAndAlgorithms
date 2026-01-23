@@ -62,3 +62,5 @@ testing
 cmake-build-*/
 
 CTestCostData.txt
+
+local_test/

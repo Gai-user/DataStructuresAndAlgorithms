@@ -1,5 +1,6 @@
 set(SRC_FILE Graph/Graph.cpp
-             BackTrack/BackTrack.cpp)
+             BackTrack/BackTrack.cpp
+             DynamicProgramming/Dynamic.cpp)
 
 add_library(DataAndAlgorithm STATIC ${SRC_FILE})
 

@@ -1,5 +1,5 @@
 # 指定 CMake 最低版本
-cmake_minimum_required(VERSION 3.30)
+cmake_minimum_required(VERSION 3.20)
 
 # 项目名称和语言
 project(CppDataStructure LANGUAGES  CXX)
@@ -22,5 +22,6 @@ endif()
 
 install(FILES
         ${CMAKE_CURRENT_SOURCE_DIR}/src/BackTrack/BackTrack.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/DynamicProgramming/Dynamic.h
         DESTINATION include
 )

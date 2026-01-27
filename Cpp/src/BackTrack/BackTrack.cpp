@@ -43,3 +43,28 @@ bool BackTrack::CanPlaceQueen(int row, int col)
     }
     return true;
 }
+
+int BackTrack::LevenshteinDistance(const std::string& word1, const std::string& word2) 
+{
+    MaxValue = std::numeric_limits<int>::max();
+    LevenshteinDistanceHelper(word1, word2, 0, 0, 0);
+    return MaxValue;
+}
+
+void BackTrack::LevenshteinDistanceHelper(const std::string& word1, const std::string& word2, int i, int j, int count) 
+{
+    if (i == word1.size() || j == word2.size()) {
+        if (i < word1.size()) { count += word1.size() - i;}
+        if (j < word2.size()) { count += word2.size() - j;}
+        if (count < MaxValue) { MaxValue = count;}
+        return;
+    }
+
+    if (word1[i] == word2[j]) {
+        LevenshteinDistanceHelper(word1, word2, i+1, j+1, count);
+    } else {
+        LevenshteinDistanceHelper(word1, word2, i+1, j, count+1); // 删除 word1[i] 或者在 word2[j] 前面加 word1[i]
+        LevenshteinDistanceHelper(word1, word2, i, j+1, count+1); // 删除 word2[j] 或者在 word1[i] 前面加 word2[j]
+        LevenshteinDistanceHelper(word1, word2, i+1, j+1, count+1); // 将 word1[i] 与 word2[j] 替换为相同的字符
+    }
+}

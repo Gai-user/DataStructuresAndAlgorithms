@@ -9,7 +9,8 @@ FetchContent_MakeAvailable(googletest)
 include(GoogleTest)
 
 set(TEST_SOURCES GraphTest.cpp
-                 BackTrackTest.cpp)
+                 BackTrackTest.cpp
+                 DynamicTest.cpp)
 add_executable(dataStructure ${TEST_SOURCES})
 
 target_link_libraries(dataStructure
